@@ -65,6 +65,7 @@ return {
                 ["<leader>d"] = { name = "debug" },
                 ["<leader>g"] = { name = "git" },
                 ["<leader>l"] = { name = "lsp" },
+                ["<leader>lw"] = { name = "workspace" },
                 ["<leader>s"] = { name = "search" },
                 ["<leader>t"] = { name = "terminal" },
                 ["<leader>v"] = { name = "vim" },

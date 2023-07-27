@@ -70,7 +70,7 @@ M.on_attach = {
         needs = "signatureHelpProvider",
     },
     {
-        lhs = "<space>wa",
+        lhs = "<space>lwa",
         rhs = vim.lsp.buf.add_workspace_folder,
         opts = {
             silent = true,
@@ -80,7 +80,7 @@ M.on_attach = {
         needs = "workspace.workspaceFolders.supported",
     },
     {
-        lhs = "<space>wr",
+        lhs = "<space>lwr",
         rhs = vim.lsp.buf.remove_workspace_folder,
         opts = {
             silent = true,
@@ -90,7 +90,7 @@ M.on_attach = {
         needs = "workspace.workspaceFolders.supported",
     },
     {
-        lhs = "<space>wl",
+        lhs = "<space>lwl",
         rhs = function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
         opts = {
             silent = true,
