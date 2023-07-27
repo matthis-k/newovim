@@ -131,6 +131,24 @@ return {
                     enabled = true,
                     backend = { "telescope" },
                     trim_prompt = true,
+                    telescope = {
+                        border = true,
+                        theme = "center",
+                        layout_config = {
+                            horizontal = { prompt_position = "top", preview_width = 0.5 },
+                            width = 0.5,
+                            height = 0.3
+                        },
+                        layout_strategy = "horizontal",
+                        prompt_prefix = " ",
+                        selection_caret = " ",
+                        sorting_strategy = "ascending",
+                        borderchars = {
+                            prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+                            results = { " ", " ", " ", " ", " ", " ", " ", " " },
+                            preview = { " ", " ", " ", " ", " ", " ", " ", " " },
+                        },
+                    },
                     get_config = function(opts)
                         if opts.kind == 'codeaction' then
                             return {
