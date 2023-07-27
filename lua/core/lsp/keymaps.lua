@@ -132,7 +132,7 @@ M.on_attach = {
     },
     {
         lhs = "gr",
-        rhs = vim.lsp.buf.references,
+        rhs = "<cmd>Telescope lsp_references<cr>",
         mode = "n",
         opts = {
             silent = true,
