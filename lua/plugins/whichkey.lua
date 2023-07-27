@@ -61,13 +61,14 @@ return {
                 ["gz"] = { name = "surround" },
                 ["]"] = { name = "next" },
                 ["["] = { name = "prev" },
+                ["<leader>b"] = { name = "buffers" },
+                ["<leader>d"] = { name = "debug" },
+                ["<leader>g"] = { name = "git" },
                 ["<leader>l"] = { name = "lsp" },
                 ["<leader>s"] = { name = "search" },
-                ["<leader>d"] = { name = "debug" },
-                ["<leader>b"] = { name = "buffers" },
-                ["<leader>g"] = { name = "git" },
-                ["<leader>w"] = { name = "window" },
+                ["<leader>t"] = { name = "terminal" },
                 ["<leader>v"] = { name = "vim" },
+                ["<leader>w"] = { name = "window" },
                 ["<leader><tab>"] = { name = "tabs" },
             }
             wk.register(keymaps)

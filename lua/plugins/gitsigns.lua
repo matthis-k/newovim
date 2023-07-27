@@ -2,31 +2,20 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
-        keys = function ()
-            return {
-                { '<leader>gs', "<cmd>Gitsigns stage_hunk", desc = "stage hunk" },
-                { '<leader>gr', "<cmd>Gitsigns reset_hunk", desc = "reset hunk" },
-                {
-                    '<leader>gs',
-                    "<cmd>Gitsigns stage_hunk",
-                    desc = "stage hunk",
-                    mode = 'v'
-                },
-                {
-                    '<leader>gr',
-        "<cmd>Gitsigns reset_hunk",
-                    desc = "reset hunk",
-                    mode = 'v'
-                },
-                { '<leader>gS', "<cmd>Gitsigns stage_buffer",                              desc = "stage buffer" },
-                { '<leader>gu', "<cmd>Gitsigns undo_stage_hunk",                           desc = "undo stage hunk" },
-                { '<leader>gR', "<cmd>Gitsigns reset_buffer",                              desc = "reset buffer" },
-                { '<leader>gp', "<cmd>Gitsigns preview_hunk",                              desc = "preview hunk" },
-                { '<leader>gB', "<cmd>Gitsigns toggle_current_line_blame",                 desc = "toggle blame line" },
-                { '<leader>gD', "<cmd>Gitsigns diffthis",                                  desc = "diff" },
-                { '<leader>gd', "<cmd>Gitsigns toggle_deleted",                            desc = "toggle deleted" },
-            }
-        end,
+        keys = {
+            { '<leader>gB', "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "toggle blame line" },
+            { '<leader>gD', "<cmd>Gitsigns diffthis<cr>",                  desc = "diff" },
+            { '<leader>gR', "<cmd>Gitsigns reset_buffer<cr>",              desc = "reset buffer" },
+            { '<leader>gS', "<cmd>Gitsigns stage_buffer<cr>",              desc = "stage buffer" },
+            { '<leader>gd', "<cmd>Gitsigns toggle_deleted<cr>",            desc = "toggle deleted" },
+            { '<leader>gp', "<cmd>Gitsigns preview_hunk<cr>",              desc = "preview hunk" },
+            { '<leader>gr', "<cmd>Gitsigns reset_hunk",                    desc = "reset hunk",       mode = 'v' },
+            { '<leader>gr', "<cmd>Gitsigns reset_hunk<cr>",                desc = "reset hunk" },
+            { '<leader>gs', "<cmd>Gitsigns stage_hunk<cr>",                desc = "stage hunk" },
+            { '<leader>gs', "<cmd>Gitsigns stage_hunk<cr>",                desc = "stage hunk",       mode = 'v' },
+            { '<leader>gu', "<cmd>Gitsigns undo_stage_hunk<cr>",           desc = "undo stage hunk" },
+            { '<leader>gw', "<cmd>Gitsigns toggle_word_diff<cr>",          desc = "toggle word diff" },
+        },
         opts = {
             signs = {
                 add = { text = "│" },
