@@ -10,9 +10,9 @@ return {
             winbar = true,
             tabs_layout = "equal",
             sources = {
-                { source = "filesystem", display_name = " " .. visuals.icons.filesystem.folder .. " Files " },
-                { source = "git_status", display_name = " " .. visuals.icons.git.branch .. " Git " },
-                { source = "buffers",    display_name = " " .. visuals.icons.filesystem.file .. " Buffers " },
+                { source = "filesystem", display_name = visuals.icons.filesystem.folder .. " Files" },
+                { source = "git_status", display_name = visuals.icons.git.branch .. " Git" },
+                { source = "buffers",    display_name = visuals.icons.filesystem.file .. " Buffers" },
             },
         },
         close_if_last_window = true,
@@ -57,7 +57,7 @@ return {
         },
         window = {
             position = "right",
-            width = 20,
+            width = 37,
             auto_expand_width = true,
             mapping_options = {
                 noremap = true,
