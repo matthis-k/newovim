@@ -1,7 +1,7 @@
 local M = {}
 
 local function augroup(name)
-    return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+    return vim.api.nvim_create_augroup(name, { clear = true })
 end
 
 function M.setup()
@@ -9,7 +9,7 @@ function M.setup()
     vim.api.nvim_create_autocmd("TextYankPost", {
         group = augroup("highlight_yank"),
         callback = function()
-            vim.highlight.on_yank()
+            vim.highlight.on_yank({ higroup = "Visual" })
         end,
     })
     -- go to last loc when opening a buffer
@@ -72,7 +72,6 @@ function M.setup()
             vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
         end,
     })
-
 end
 
 return M
