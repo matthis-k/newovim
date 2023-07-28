@@ -9,67 +9,8 @@
 ---@field enabled boolean|nil
 ---@field custom_keys table[]|nil
 
-
-
----@type LanguageInfo[]
 local M = {}
-M.languages = {
-    ---@type LanguageInfo
-    lua = {
-        filetype = "lua",
-        lspconfig = {
-            name = "lua_ls",
-            opts = {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { 'vim' },
-                        },
-                        workspace = {
-                            library = vim.api.nvim_get_runtime_file("", true),
-                        },
-                        hint = {
-                            enable = true,
-                        }
-                    },
-                },
-            },
-        },
-        mason = { lsp = "lua-language-server", formatter = "stylua" },
-        treesitter = "lua",
-    },
-    ---@type LanguageInfo
-    rust = {
-        filetype = "rust",
-        lspconfig = { name = "rust_analyzer" },
-        mason = { lsp = "rust-analyzer", debug = "codelldb" },
-        treesitter = "rust",
-    },
-    ---@type LanguageInfo
-    ccpp = {
-        filetype = { "c", "cpp", "h", "hpp" },
-        lspconfig = { name = "clangd" },
-        mason = { lsp = "clangd", debug = "codelldb", formatter = "clang-format" },
-        treesitter = { "c", "cpp" },
-    },
-    fish = {
-        filetype = "fish",
-        null_ls = { diagnostics = "fish" },
-        treesitter = "fish",
-    },
-    nix = {
-        filetype = "nix",
-        lspconfig = { name = "rnix" },
-        mason = { lsp = "rnix-lsp" },
-        treesitter = "nix",
-    },
-    git = {
-        null_ls = { code_actions = "gitsigns" }
-    },
-    noice = {
-        treesitter = { "bash", "vim", "regex", "lua", "markdown", "markdown_inline" }
-    }
-}
+M.languages = require("utils").dirReq("core.lsp.languages")
 
 function M.merge_field(field_name)
     local r = {}
