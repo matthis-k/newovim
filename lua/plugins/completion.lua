@@ -77,7 +77,7 @@ return {
                 },
             }
         end,
-        config = function(opts)
+        config = function(_, opts)
             local cmp = require("cmp")
             cmp.setup(opts)
             cmp.setup.cmdline(':', {
@@ -92,6 +92,12 @@ return {
                         }
                     }
                 })
+            })
+            cmp.setup.cmdline({ '/', '?' }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = 'buffer' }
+                }
             })
         end,
     },
