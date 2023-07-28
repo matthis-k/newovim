@@ -78,4 +78,13 @@ function M.add_attach(on_attach)
     })
 end
 
+function M.spawn_terminal(cmd)
+    require("toggleterm.terminal").Terminal:new({
+        cmd = cmd,
+        dir = "git_dir",
+        direction = "horizontal",
+        close_on_exit = false,
+    }):toggle()
+end
+
 return M
