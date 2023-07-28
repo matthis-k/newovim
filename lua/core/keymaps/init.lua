@@ -41,6 +41,7 @@ end
 function M.lsp_attach_keymaps(mappings)
     require("core.lsp").on_attach("LspKeyBindings", function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if not client then return end
         local ft = vim.filetype.match({ buf = 0 })
 
         for lang, conf in pairs(require("core.lsp.langlookup").languages) do
