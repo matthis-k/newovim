@@ -1,7 +1,13 @@
 return {
-    filetype = "fish",
-    null_ls = { diagnostics = "fish" },
-    treesitter = "fish",
+    filetype = { "bash", "sh" },
+    lspconfig = { name = "bashls" },
+    mason = {
+        lsp = { "bash-language-server", "shellcheck", "shellharden" },
+        debug = "bash-debug-adapter",
+        formatter = "shfmt"
+    },
+    treesitter = { "bash" },
+    null_ls = { code_actions = "shellcheck", diagnostics = "shellcheck", formatting = { "shellfmt", "shellharden" } },
     custom_keys = {
         {
             mode = "n",
@@ -9,7 +15,7 @@ return {
             rhs = function()
                 local current_buffer = vim.api.nvim_get_current_buf()
                 local buffer_name = vim.api.nvim_buf_get_name(current_buffer)
-                require("utils").spawn_terminal("fish " .. buffer_name)
+                require("utils").spawn_terminal("bash " .. buffer_name)
             end,
             opts = { desc = "run file" }
         },
