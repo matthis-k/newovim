@@ -45,7 +45,9 @@ function M.lsp_attach_keymaps(mappings)
         local ft = vim.filetype.match({ buf = 0 })
 
         for lang, conf in pairs(require("core.lsp.langlookup").languages) do
-            if lang == ft or conf.filetype == ft then
+            local is_fitting_ft = vim.tbl_isarray(conf.filetype) and vim.tbl_contains(conf.filetype, ft) or
+                conf.filetype == ft or lang == ft
+            if is_fitting_ft then
                 for _, mapping in ipairs(overwrite(mappings, conf.custom_keys or {})) do
                     if not mapping.needs or client.server_capabilities[mapping.needs] or client.supports_method and client.supports_method(mapping.needs) then
                         map(mapping)

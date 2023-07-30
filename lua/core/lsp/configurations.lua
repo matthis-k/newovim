@@ -29,7 +29,7 @@ function M.setup()
         for _, package in pairs(config.mason) do
             if type(package) == "string" then
                 install_if_missing(package)
-            elseif type(package) == "string[]" then
+            elseif vim.tbl_isarray(package) then
                 for _, pkg in pairs(package) do
                     install_if_missing(pkg)
                 end
