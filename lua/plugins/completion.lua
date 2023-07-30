@@ -44,7 +44,7 @@ return {
                             end
                         end,
                         s = cmp.mapping.confirm({ select = true }),
-                        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
                     }),
                     ["<Tab>"] = function(fallback)
                         if cmp.visible() then
@@ -82,7 +82,6 @@ return {
             local cmp = require("cmp")
             cmp.setup(opts)
             cmp.setup.cmdline(':', {
-                mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
                     { name = 'path' }
                 }, {
